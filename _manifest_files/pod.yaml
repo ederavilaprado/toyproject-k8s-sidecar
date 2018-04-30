@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: handle-shutdown
+  namespace: default
+spec:
+  containers:
+  - image: handle_shutdown
+    imagePullPolicy: Never
+    name: main
+    command:
+    - './trap'
+  restartPolicy: Never
